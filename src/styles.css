@@ -40,7 +40,7 @@ header {
 	display: grid;
 	grid-template-columns: auto auto;
 	padding: 30px 0;
-	gap: 28%;
+	gap: 25%;
 }
 
 h1 {
