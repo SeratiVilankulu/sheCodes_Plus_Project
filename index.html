@@ -10,32 +10,42 @@
 			rel="stylesheet"
 		/>
 		<link rel="stylesheet" href="src/styles.css" />
-		<title>Serati App</title>
+		<title>Serati Weather App</title>
 	</head>
 	<body>
 		<div class="weather-app">
 			<header>
-				<form>
-					<input type="search" placeholder="Enter a city..." required />
-					<input type="submit" value="search" />
+				<form class="search-form">
+					<input
+						type="search"
+						placeholder="Enter a city..."
+						required
+						class="search-form-input"
+					/>
+					<input type="submit" value="Search" class="search-form-button" />
 				</form>
 			</header>
-			<hr />
 			<main>
-				<div>
-					<section>
+				<div class="weather-content">
+					<section class="location">
 						<h1>Pretoria</h1>
-						<p>
+						<p class="location-details">
 							Tuesday 12:00, Sunny <br />
-							Humidity: 96%, Wind: 3.20km/h
+							Humidity: <span>96%</span>, Wind: <span> 3.20km/h</span>
 						</p>
 					</section>
-					<section>☀️25°C</section>
+					<section class="temperature-details">
+						<div class="weather-icon">☀️</div>
+            <div class="temperature">25</div>
+            <div class="degrees">°C</div>
+					</section>
 				</div>
 			</main>
 			<footer>
-				Coded by
-				<a href="https://github.com/SeratiVilankulu" target="_blank">Serati</a>
+				This project was coded by
+				<a href="https://github.com/SeratiVilankulu" target="_blank"
+					>Serati Vilankulu</a
+				>
 				hosted on
 				<a
 					href="https://github.com/SeratiVilankulu/sheCodes_Plus_Project"
