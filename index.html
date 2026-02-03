@@ -10,16 +10,17 @@
 			rel="stylesheet"
 		/>
 		<link rel="stylesheet" href="src/styles.css" />
-		<title>Serati Weather App</title>
+		<title>Weather App</title>
 	</head>
 	<body>
 		<div class="weather-app">
 			<header>
-				<form class="search-form">
+				<form class="search-form" id="search-form">
 					<input
 						type="search"
 						placeholder="Enter a city..."
 						required
+            id="search-form-input"
 						class="search-form-input"
 					/>
 					<input type="submit" value="Search" class="search-form-button" />
@@ -28,7 +29,7 @@
 			<main>
 				<div class="weather-content">
 					<section class="location">
-						<h1>Pretoria</h1>
+						<h1 id="city">Pretoria</h1>
 						<p class="location-details">
 							Tuesday 12:00, Sunny <br />
 							Humidity: <span>96%</span>, Wind: <span> 3.20km/h</span>
@@ -56,5 +57,6 @@
 				<a href="https://shecode-plus.netlify.app/" target="_blank">Netlify</a>
 			</footer>
 		</div>
+		<script src="src/index.js"></script>
 	</body>
 </html>
