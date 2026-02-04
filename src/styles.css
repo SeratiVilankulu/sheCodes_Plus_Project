@@ -54,7 +54,8 @@ h1 {
 	font-size: 16px;
 }
 
-#humidity, #wind-speed {
+#humidity,
+#wind-speed {
 	color: #1a6a6d;
 }
 
@@ -66,19 +67,18 @@ h1 {
 .temperature {
 	font-size: 80px;
 	font-weight: bold;
-  line-height: 72px;
+	line-height: 80px;
 }
 
 .weather-icon {
 	width: 88px;
-	font-size: 50px;
-	text-align: center;
-	margin: 5px 0px;
+	height: 88px;
 }
 
 .degrees {
 	font-weight: 500;
 	font-size: 30px;
+	line-height: 40px;
 }
 
 footer {
