@@ -54,7 +54,7 @@ h1 {
 	font-size: 16px;
 }
 
-.location-details > span {
+#humidity, #wind-speed {
 	color: #1a6a6d;
 }
 
