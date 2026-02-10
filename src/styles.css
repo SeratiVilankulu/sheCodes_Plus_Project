@@ -83,7 +83,7 @@ h1 {
 
 .weather-forecast {
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
 	margin-bottom: 30px;
 }
 
@@ -95,6 +95,7 @@ h1 {
 	text-align: center;
 	color: #27214266;
 	margin-bottom: 10px;
+  line-height: 20px;
 }
 
 .forecast-icon > img {

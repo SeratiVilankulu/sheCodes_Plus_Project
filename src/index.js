@@ -58,7 +58,33 @@ function handleSubmitForm(event) {
 	searchCity(search.value);
 }
 
+function displayForecast() {
+	let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+	let forecastHtml = "";
+
+	days.forEach(function (day) {
+		forecastHtml += `<div class="forecast-details">
+						<div class="forecast-day">${day}</div>
+						<div class="forecast-icon">
+							<img
+								src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
+							/>
+						</div>
+						<div class="forecast-temp">
+							<div class="forecast-high">
+								<strong>31°C</strong>
+							</div>
+							<div class="forecast-low">17°C</div>
+						</div>
+					</div>`;
+	});
+
+  let forecast = document.querySelector("#forecast");
+  forecast.innerHTML = forecastHtml
+}
+
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmitForm);
 
 searchCity("Pretoria");
+displayForecast();
