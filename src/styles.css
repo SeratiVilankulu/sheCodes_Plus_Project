@@ -81,6 +81,42 @@ h1 {
 	line-height: 40px;
 }
 
+.weather-forecast {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 30px;
+}
+
+.forecast-details {
+	font-size: 16px;
+}
+
+.forecast-day {
+	text-align: center;
+	color: #27214266;
+	margin-bottom: 10px;
+}
+
+.forecast-icon > img {
+	text-align: center;
+	width: 88px;
+	height: 88px;
+	margin: 0 auto;
+}
+
+.forecast-temp {
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	margin-top: 10px;
+	font-size: 14px;
+	color: #1a6a6d;
+}
+
+.forecast-high {
+	margin-right: 10px;
+}
+
 footer {
 	border-top: 1px solid #f1fbf3;
 	padding: 30px 0 0 0;
