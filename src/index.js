@@ -15,6 +15,8 @@ function updateWeather(response) {
 	humidity.innerHTML = `${response.data.temperature.humidity}%`;
 	windSpeed.innerHTML = `${response.data.wind.speed}km/h`;
 	icon.setAttribute("src", response.data.condition.icon_url);
+
+	getForecast(response.data.city);
 }
 
 function formatDate(date) {
@@ -58,33 +60,48 @@ function handleSubmitForm(event) {
 	searchCity(search.value);
 }
 
-function displayForecast() {
-	let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+function formatForecastDate(timestamp) {
+	let day = new Date(timestamp * 1000);
+	let daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+	return daysOfWeek[day.getDay()];
+}
+
+function getForecast(city) {
+	let apiKey = "c42btd9a6f7of80d48aa81b1c6310a37";
+	let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
+
+	axios.get(apiUrl).then(displayForecast);
+}
+
+function displayForecast(response) {
+	console.log(response.data);
 	let forecastHtml = "";
 
-	days.forEach(function (day) {
-		forecastHtml += `<div class="forecast-details">
-						<div class="forecast-day">${day}</div>
+	response.data.daily.forEach(function (day, index) {
+		if (index < 5) {
+			forecastHtml += `<div class="forecast-details">
+						<div class="forecast-day">${formatForecastDate(day.time)}</div>
 						<div class="forecast-icon">
 							<img
-								src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
+								src="${day.condition.icon_url}"
 							/>
 						</div>
 						<div class="forecast-temp">
 							<div class="forecast-high">
-								<strong>31°C</strong>
+								<strong>${Math.round(day.temperature.maximum)}°</strong>
 							</div>
-							<div class="forecast-low">17°C</div>
+							<div class="forecast-low">${Math.round(day.temperature.minimum)}°</div>
 						</div>
 					</div>`;
+		}
 	});
 
-  let forecast = document.querySelector("#forecast");
-  forecast.innerHTML = forecastHtml
+	let forecast = document.querySelector("#forecast");
+	forecast.innerHTML = forecastHtml;
 }
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmitForm);
 
 searchCity("Pretoria");
-displayForecast();
